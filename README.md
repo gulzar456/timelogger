@@ -34,7 +34,7 @@ sudo apt-get install git
 clone our timelogger reposiratory from our github page, by using following command:
 
 ```
-git clone https://github.com/gulzar456/timelogger.git
+git clone https://github.com/gulzar456/smdh_smart_time_tracker.git
 ```
 
 Go to timelogger folder in your home directory and open the terminal 
