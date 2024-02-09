@@ -7,7 +7,7 @@ through our Android Application. Which can be accessed through our Main server w
 This software is accompanied by an Andriod App, which connects to the server and takes manual input to set the 
 state of its assigned machine. [The Android App APK can be downloaded from here.](https://github.com/DigitME2/timelogger/releases/tag/v3.0)
 
-# Installing with installer
+<!-- # Installing with installer
 Ubuntu installer file for installing this software can also be found here. 
 [The Main web app installer file can be downloaded from here.](https://github.com/DigitME2/timelogger/releases/tag/v3.0)
 
@@ -20,7 +20,7 @@ And run the installer by using the following command.
 sh ubuntu-installer.sh
 ```
 
-``` Installer will get paused with text 'librdkafka installation path? [autodetect] :' Then please press enter to resume installation. ```
+``` Installer will get paused with text 'librdkafka installation path? [autodetect] :' Then please press enter to resume installation. ``` -->
 
 # Manual Installation
 (Tested on Ubuntu 22.04)
