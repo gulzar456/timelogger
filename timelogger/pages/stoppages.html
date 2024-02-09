@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <!-- 		
+        Copyright 2022 DigitME2
+
+        Licensed under the Apache License, Version 2.0 (the "License");
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language governing permissions and
+        limitations under the License.
+         -->
+
+        <title>DigitME2 - PTT</title>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="../scripts/client/jquery.js"></script>
+        <script src="../scripts/client/stoppages.js"></script>
+        <script src="../scripts/client/generate_table_generic.js"></script>
+		<script>
+		$(function(){
+			$("#commonHeader").load("header.html", function activePage(){
+					var pageName = window.location.pathname.split("/").pop().split(".")[0];
+					$("#" + pageName + "_nav_link").addClass("navActive");
+				});
+			$("#commonFooter").load("footer.html");
+		});
+		</script>
+        <link rel="stylesheet" href="../css/common.css" type="text/css">
+        <link rel="stylesheet" href="../css/stoppages.css" type="text/css">
+    </head>
+    <body>
+        <div class="pageContainer">
+            <div id ="commonHeader"></div>
+            <? php include "header.html" ?>
+            <div class="pageMainBody">
+                <h1 id="pageTitle">Add New Problem Reason</h1>
+                <div id="addStoppageControls">
+                    <div id="newStoppageReasonArea">
+                        <span id="newStoppageReasonLabel">New Problem Reason</span>
+                        <input type="text" class="stoppageReasonInput" id="newStoppageReason" pattern="^[a-zA-Z0-9_ ]{1,20}$">
+                        <span id="newStoppageReasonCounter"></span>
+                        <input id="newStoppageButton" type="button" value="Add Reason"  onclick="addNewStoppageReason()">
+			                <span id="addStoppageReasonResponseField"/>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div id="existingStoppageDisplay">
+                        <h1 id="exsistingProblemsLable">Existing Problem Reasons</h1>
+                        <br>
+                        <div id="existingStoppagesReasonContainer">
+                            <span id="tablePlaceholder">Loading...</span>
+                        </div>
+                        <div id="stoppagesLogTableController">
+                                <h1 id="stoppagesLogTableTitle">Recorded Problem Logs</h1>
+                                <div>
+                                    <label for="searchPhrase" id="searchPhraseLabel">Search with Job ID:</label>
+                                        <input type="text" id="searchPhrase" class="LogsControl" placeholder="enter search phrase" oninput="updateStoppageLogsTable()"/> 
+                                </div>
+                            <br>
+                            <div>
+                                <label for="checkbox" id="useStartDateLabel">Use Start Date</label>
+                                <input type="checkbox" id="startDateCheckbox" class="dateControls" onchange="onUseStartDateCheckbox()">
+                                <span id="startDateLabel">Start Date:</span>
+                                <input type="date" id="dateStartInput" disabled class="dateControls">
+                                <label for="checkbox" id="useEndDateLabel">Use End Date</label>
+                                <input type="checkbox" id="endDateCheckbox" class="dateControls" onchange="onUseEndDateCheckbox()">
+                                <span id="endDateLabel">End Date:</span>
+                                <input type="date" id="dateEndInput" disabled class="dateControls">
+                                <input id="fetchStoppagesLogButton" type="button" onclick="updateStoppageLogsTable()" value="Search Logs" class="dateControls">
+                                <br>
+                                <br>
+                                <a id="csvDownloadLink" href="" download type="text/css" class="control">Click here to download all the Problem Logs as a CSV file</a>
+                            </div>
+                            <br>
+                            <br>
+                            <div>
+                                <div id="stoppagesLogTableContainer"> 
+                                    <br>
+                                    <span id="stoppageLogsTablePlaceholder">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+                </div>
+            </div>
+        </div>
+		<div id ="commonFooter"></div>
+    </body>
+</html>
