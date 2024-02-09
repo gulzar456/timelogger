@@ -22,7 +22,7 @@ sh ubuntu-installer.sh
 
 ``` Installer will get paused with text 'librdkafka installation path? [autodetect] :' Then please press enter to resume installation. ``` -->
 
-# Manual Installation
+# Installation
 (Tested on Ubuntu 22.04)
 
 Install Git in your computer with the following command:
